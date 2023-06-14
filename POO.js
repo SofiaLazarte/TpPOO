@@ -57,3 +57,33 @@ cuentaUno.ingresar(50);
 cuentaUno.extraer(100);
 cuentaUno.informar();
 */
+
+//punto tres 
+
+class Rectangulo
+{
+    constructor(alto, ancho)
+    {
+        this.alto = alto;
+        this.ancho = ancho;
+    }
+
+    modificar (ladoA, ladoB)
+    {
+        this.alto = ladoA;
+        this.ancho = ladoB;
+
+        console.log(`las propiedades del rectangulo son ${this.alto} cm de alto y ${this.ancho} cm de ancho`);
+    }
+
+    perimetro ()
+    {
+        this.pe = (this.ancho + this.alto)*2 ;
+
+        console.log(`el perimetro del rectangulo es ${this.pe} cm`);
+    }
+}
+
+let rectanguloUno  = new Rectangulo(5,10);
+rectanguloUno.modificar(60,100);
+rectanguloUno.perimetro();
