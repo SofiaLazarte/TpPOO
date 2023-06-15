@@ -56,7 +56,7 @@ cuentaUno.informar();
 cuentaUno.ingresar(50);
 cuentaUno.extraer(100);
 cuentaUno.informar();
-*/
+
 
 //punto tres 
 
@@ -87,3 +87,114 @@ class Rectangulo
 let rectanguloUno  = new Rectangulo(5,10);
 rectanguloUno.modificar(60,100);
 rectanguloUno.perimetro();
+
+
+//punto cuatro
+
+class Producto 
+{
+    constructor(codigo, nombre, precio)
+    {
+        this.codigo=codigo;
+        this.nombre=nombre;
+        this.precio=precio;
+    }
+
+    imprimeDatos ()
+    {
+        console.log(`el producto llamado ${this.nombre} codigo: ${this.codigo} tiene un precio de $ ${this.precio}`);
+    }
+}
+
+//intancias de productos
+var productoUno = new Producto(1548, "LapiceraBic", 45);
+var productoDos = new Producto(14, "carpeta", 450.05);
+var productoTres = new Producto(5, "mochila", 5549.50);
+
+var arrayProductos = [productoUno, productoDos, productoTres];
+for (let i = 0; i < arrayProductos.length; i++) 
+{
+    arrayProductos[i].imprimeDatos();
+}*/
+
+//punto cinco 
+
+class Persona 
+{
+    constructor(nombre, edad, dni, sexo, peso, altura, nacimiento)
+    {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.dni = dni;
+        this.sexo = sexo;
+        this.peso = peso;
+        this.altura = altura;
+        this.nacimiento = nacimiento;
+
+    }
+
+    mostrarGeneracion()
+    {
+        if (this.nacimiento <= 1948) 
+        {
+            document.write(`${this.nombre} pertenece a la generacion Silent la cual tiene como razgo caracteristico la austeridad`);
+        }
+
+        else if (this.nacimiento >= 1949 || this.nacimiento <= 1968) 
+        {
+            document.write(`${this.nombre} pertenece a la generacion Baby Boom la cual tiene como razgo caracteristico la ambicion`);
+        }
+
+        else if (this.nacimiento >= 1969 || this.nacimiento <= 1980) 
+        {
+            document.write(`${this.nombre} pertenece a la generacion X la cual tiene como razgo caracteristico la obsesion por el exito`);
+        }
+
+        else if (this.nacimiento >= 1981 || this.nacimiento <= 1993) 
+        {
+            document.write(`${this.nombre} pertenece a la generacion Y o Millennials la cual tiene como razgo caracteristico la frustracion`);
+        }
+
+        else if (this.nacimiento >= 1994 || this.nacimiento <= 2010) 
+        {
+            document.write(`${this.nombre} pertenece a la generacion Z la cual tiene como razgo caracteristico la irreverencia`);
+        }
+
+        else 
+        {
+            document.write(`${this.nombre} pertenece a la generacion desconocida`);
+        }
+
+    }
+
+    esMayordeEdad()
+    {
+        if (this.edad >= 18) 
+        {
+            document.write(`${this.nombre} es mayor de edad`);
+        } 
+        else 
+        {
+            document.write(`${this.nombre} es menor de edad`);
+        }
+
+    }
+
+    MostrarDatos()
+    {
+        document.write(`${this.nombre} ${this.sexo} de ${this.edad} años, con DNI ${this.dni} y fecha de nacimiento el dia ${this.nacimiento}. Tiene una altura de ${this.altura} cm y un peso de ${this.peso} kg. `);
+    }
+
+    generarDni()
+    {
+        this.dni = (Math.round(Math.random() * (100000000 - 10000000 ) + 10000000));
+        document.write(this.dni)
+    }
+}
+
+var personaUno = new Persona ("Segundo", 25, 48522475, "masculino", 90, 198, 1997);
+
+personaUno.mostrarGeneracion();
+personaUno.esMayordeEdad();
+personaUno.MostrarDatos();
+personaUno.generarDni();
