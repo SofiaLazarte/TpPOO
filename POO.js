@@ -23,7 +23,7 @@ let autoUno = new Auto('negro', 'ford', 2018);
 autoUno.apagado();
 autoUno.encendido();
 
-//punto dos
+//punto dos-------------------------------------------------------------------------------------------------------------------------------------
 
 class Cuenta 
 {
@@ -58,7 +58,7 @@ cuentaUno.extraer(100);
 cuentaUno.informar();
 
 
-//punto tres 
+//punto tres -------------------------------------------------------------------------------------------------------------------------------
 
 class Rectangulo
 {
@@ -89,7 +89,7 @@ rectanguloUno.modificar(60,100);
 rectanguloUno.perimetro();
 
 
-//punto cuatro
+//punto cuatro---------------------------------------------------------------------------------------------------------------------------------
 
 class Producto 
 {
@@ -115,9 +115,9 @@ var arrayProductos = [productoUno, productoDos, productoTres];
 for (let i = 0; i < arrayProductos.length; i++) 
 {
     arrayProductos[i].imprimeDatos();
-}*/
+}
 
-//punto cinco 
+//punto cinco ----------------------------------------------------------------------------------------------------------------------------
 
 class Persona 
 {
@@ -197,4 +197,86 @@ var personaUno = new Persona ("Segundo", 25, 48522475, "masculino", 90, 198, 199
 personaUno.mostrarGeneracion();
 personaUno.esMayordeEdad();
 personaUno.MostrarDatos();
-personaUno.generarDni();
+personaUno.generarDni();*/
+
+//punto seis -------------------------------------------------------------------------------------------------------------------------------
+class Libro
+{
+    constructor(isbn, titulo, autor, numeroDePaginas)
+    {
+        this.isbn = isbn;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.numeroDePaginas = numeroDePaginas;
+    }
+
+    set modificarIsbn(nuevoValor)
+    {
+        this.isbn = nuevoValor;
+    }
+    
+    get getIsbn()
+    {
+        return this.isbn;
+    }
+
+    set modificarTitulo(nuevoValor)
+    {
+        this.titulo = nuevoValor;
+    }
+    
+    get getTitulo()
+    {
+        return this.titulo;
+    }
+
+    set modificarAutor(nuevoValor)
+    {
+        this.autor = nuevoValor;
+    }
+    
+    get getAutor()
+    {
+        return this.autor;
+    }
+
+    set modificarNumeroDePaginas(nuevoValor)
+    {
+        this.numeroDePaginas = nuevoValor;
+    }
+    
+    get getNumeroDePaginas()
+    {
+        return this.numeroDePaginas;
+    }
+
+    mostrarLibro()
+    {
+        console.log(`El libro ${this.titulo} con ISBN ${this.isbn} creado por el autor ${this.autor} tiene ${this.numeroDePaginas} paginas`)
+    }
+    
+    compararNumeroDePaginas(libroDos) //se le pasa el obejeto 2 asi puedo usar sus atributos. 
+    {
+        
+        if (this.numeroDePaginas > libroDos.numeroDePaginas ) 
+        {
+            document.write(`El libro ${this.titulo} tiene mas numeros de paginas`);   
+        } 
+        else 
+        {
+            document.write(`El libro ${libroDos.titulo} tiene mas numeros de paginas`);   
+        }
+    }
+
+}
+
+var libroUno = new Libro (4, "alicia en el pais de las maravillas", "Nicolas Burgos", 1542);
+var libroDos = new Libro (5, "Harry Potter", "Sofia Lazarte", 1887);
+
+libroUno.mostrarLibro();
+libroDos.mostrarLibro();
+libroUno.compararNumeroDePaginas(libroDos); // si le paso el objeto puedo usar propiedades y metodos 
+
+libroDos.modificarIsbn = 78; //uso el set de arriba para modicar
+console.log (libroDos.getIsbn);// y luego imprimo el valor con su funcion get
+
